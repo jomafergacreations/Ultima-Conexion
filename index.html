@@ -250,7 +250,7 @@ input{font:inherit;font-size:16px;color:var(--ink)}
 .more{font-size:12.5px;color:#aab1bf;margin-top:2px}
 .grph{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 0;font-size:13px;font-weight:600;color:#dfe3ea;flex:none}.grph button{background:#ffffff1c;border-radius:14px;padding:5px 12px;font-size:12.5px}
 .btn:disabled{opacity:.3;cursor:not-allowed}
-.lbl{margin-top:34px;font-size:15px;color:#c9ced8}.start .field{margin-top:10px}
+.lbl{margin-top:34px;font-size:15px;color:#c9ced8}.full.start{justify-content:safe center;overflow-y:auto}.start .field{margin-top:10px}
 .bootl .blogo{font-size:32px;font-weight:200;letter-spacing:10px;animation:logoIn 1.8s ease both}
 @keyframes logoIn{from{opacity:0;letter-spacing:24px;filter:blur(8px)}}
 .spin{width:26px;height:26px;border:2.5px solid #ffffff2e;border-top-color:#fff;border-radius:50%;animation:rot .8s linear infinite}
@@ -501,6 +501,7 @@ function showBlock(){if(document.querySelector('.modal'))return;modal('Actualiza
 const TOPAPPS=['telefono','contactos','charla','galeria','faro','mercado','ajustes','alba','grabadora','qr','linterna'];
 function go(n,arg){if(blocked()&&!ALLOWED.includes(n)){showBlock();return}if(PLAY.c){stopSpeech();PLAY.tok++;PLAY.c=null;PLAY.i=-1}
  const from=S.view.n;if(from==='splash'){S.splTok++;S.view=S.stack.pop()||{n:'home'}}
+ {const app=APPOF[n];if(app&&S.curApp&&app!==S.curApp&&!['home','lock','title','boot','recents'].includes(S.view.n)&&!['addc','numinfo','contacto','foto','apinfo'].includes(n))return switchTo(app,{n,arg});}
  if(S.view.n==='home'&&TOPAPPS.includes(n)&&arg===undefined)return openApp(n);
  if(S.view.n==='home')S.curApp=APPOF[n]||n;
  S.anim=S.view.n==='home'?'open':S.view.n===n?null:'push';
