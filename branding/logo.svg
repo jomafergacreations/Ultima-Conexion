@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+ <defs>
+  <radialGradient id="bg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#1a2230"/><stop offset=".55" stop-color="#0b0e14"/><stop offset="1" stop-color="#040507"/></radialGradient>
+  <radialGradient id="iris" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#ff6a4d"/><stop offset=".55" stop-color="#e0231b"/><stop offset="1" stop-color="#6e0805"/></radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff3b30" stop-opacity=".45"/><stop offset="1" stop-color="#ff3b30" stop-opacity="0"/></radialGradient>
+  <linearGradient id="bub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f8"/><stop offset="1" stop-color="#cfd3dc"/></linearGradient>
+  <clipPath id="band"><rect x="0" y="468" width="1024" height="22"/></clipPath>
+  <path id="b" d="M302 300 H722 A70 70 0 0 1 792 370 V610 A70 70 0 0 1 722 680 H450 L340 772 L354 680 H302 A70 70 0 0 1 232 610 V370 A70 70 0 0 1 302 300 Z"/>
+  <g id="eye">
+   <path d="M352 490 Q512 372 672 490 Q512 608 352 490 Z" fill="#06070a"/>
+   <circle cx="512" cy="490" r="66" fill="url(#iris)"/>
+   <circle cx="512" cy="490" r="27" fill="#030303"/>
+   <circle cx="532" cy="468" r="11" fill="#fff" opacity=".9"/>
+  </g>
+ </defs>
+ <rect width="1024" height="1024" fill="url(#bg)"/>
+ <circle cx="512" cy="490" r="300" fill="url(#glow)"/>
+ <use href="#b" fill="none" stroke="#ff2d55" stroke-width="10" opacity=".55" transform="translate(-12 0)"/>
+ <use href="#b" fill="none" stroke="#2de1ff" stroke-width="10" opacity=".45" transform="translate(12 0)"/>
+ <use href="#b" fill="url(#bub)"/>
+ <use href="#eye"/>
+ <g clip-path="url(#band)" transform="translate(22 0)"><use href="#b" fill="url(#bub)"/><use href="#eye"/></g>
+ <g opacity=".07" fill="#000">
+  <rect y="0" width="1024" height="1024" fill="url(#bg)" opacity="0"/>
+ </g>
+</svg>
